@@ -1,8 +1,8 @@
 import json
-
 from flask import Flask, render_template, request, jsonify
 import os
 from resume_parser import resumeparse
+from gunicorn.app.wsgiapp import run
 
 app = Flask(__name__)
 
@@ -35,4 +35,4 @@ def help_here():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    run()
