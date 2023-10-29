@@ -1,0 +1,5 @@
+flask~=3.0.0
+spacy~=2.3.9
+requests~=2.31.0
+resume-parser~=0.8.4
+!python -m spacy download en_core_web_sm

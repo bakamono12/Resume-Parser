@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Resume Parser</title>
+</head>
+<body class="bg-dark">
+<div class="card bg-dark text-light text-center">
+    <div class="card-header">
+        <h1 class="title text-light">Resume Parser</h1>
+    </div>
+    <div class="card-body">
+        <p class="card-text">Upload your resume and get the parsed data</p>
+        <form action="/parse" method="post" enctype="multipart/form-data">
+            <input type="file" name="resume" accept=".pdf,.docx" class="bg-light text-dark">
+            <button type="submit" class="btn btn-outline-light">Parse</button>
+        </form>
+    </div>
+    <div class="card-body text-light">
+        <blockquote class="blockquote mb-0">
+            <p>{{ data }}</p>
+        </blockquote>
+    </div>
+    <div class="card-footer text-muted">
+        <p class="card-text text-light">Made with ❤️ by <a href="https://baka-dev.com/" class="text-light">Abhishek Pathak</a></p>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+</html>
