@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Documentation</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <h1 class="mt-5">API Documentation</h1>
+    <p class="lead">Learn how to request data from the API.</p>
+
+    <h2 class="mt-4">Request Data</h2>
+    <p>To request data from the API, you can use the following code example in Python using the <code>requests</code>
+        library:</p>
+
+    <pre><code class="python">import requests
+
+url = 'http://127.0.0.1:5000/parse'
+files = {'resume': ('ATS_classic_HR_resume.pdf', open('static/ATS_classic_HR_resume.pdf', 'rb'))}
+response = requests.post(url, files=files)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print("Error:", response.status_code)
+</code></pre>
+
+    <h2 class="mt-4">Explanation</h2>
+    <p>This code sends a POST request to the API endpoint (<code>/parse</code>) with a resume file attached as a <code>multipart/form-data</code>
+        request. If the response status code is 200, the API has successfully processed the request, and you can access
+        the parsed data in the <code>data</code> variable.</p>
+
+    <h2 class="mt-4">API Response</h2>
+    <p>The API will return a JSON response containing the parsed data. You can access this data for further processing
+        as needed.</p>
+
+    <h2 class="mt-4">Additional Information</h2>
+    <p>For more information on API usage and available endpoints, please refer to the API documentation or contact the
+        API provider.</p>
+    Made with ❤️ by <a href="https://www.linkedin.com/in/abhishek-p99/">Abhishek Pathak</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.0-beta2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
